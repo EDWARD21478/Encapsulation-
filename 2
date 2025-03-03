@@ -1,0 +1,28 @@
+class Person:
+    def __init__(self, first_name, last_name, age, address):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+        self.address = address
+
+    def get_full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
+    def get_details(self):
+        return f"Name: {self.get_full_name()}, Age: {self.age}, Address: {self.address}"
+
+    def update_address(self, new_address):
+        self.address = new_address
+
+    def have_birthday(self):
+        self.age += 1
+
+# Example usage
+if __name__ == "__main__":
+    person = Person("John", "Doe", 28, "123 Main St")
+    print(person.get_details())
+    
+    person.update_address("456 Elm St")
+    person.have_birthday()
+    
+    print(person.get_details())
